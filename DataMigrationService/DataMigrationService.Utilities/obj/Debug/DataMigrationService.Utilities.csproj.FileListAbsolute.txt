@@ -7,3 +7,13 @@ D:\DataMigrationService\DataMigrationService.Utilities\bin\Debug\EntityFramework
 D:\DataMigrationService\DataMigrationService.Utilities\bin\Debug\EntityFramework.SqlServer.xml
 D:\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.dll
 D:\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.pdb
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\DataMigrationService.Utilities.dll.config
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\DataMigrationService.Utilities.dll
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\DataMigrationService.Utilities.pdb
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\EntityFramework.dll
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\EntityFramework.xml
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.csprojResolveAssemblyReference.cache
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.dll
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.pdb
