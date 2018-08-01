@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="STHookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="STHookEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DailyLog" EntityType="STHookModel.DailyLog" />
+    <EntitySet Name="STHookLog" EntityType="STHookModel.STHookLog" />
+    <AssociationSet Name="FK_DailyLog_STHookLog" Association="STHookModel.FK_DailyLog_STHookLog">
+      <End Role="STHookLog" EntitySet="STHookLog" />
+      <End Role="DailyLog" EntitySet="DailyLog" />
+    </AssociationSet>
+    <EntitySet Name="SMTPSettings" EntityType="STHookModel.SMTPSettings" />
+    <EntitySet Name="HookCredentials" EntityType="STHookModel.HookCredentials" />
+  </EntityContainer>
+  <EntityType Name="DailyLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceTradeId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="logType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="STHookLog" Relationship="STHookModel.FK_DailyLog_STHookLog" FromRole="DailyLog" ToRole="STHookLog" />
+  </EntityType>
+  <EntityType Name="STHookLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="DailyLog" Relationship="STHookModel.FK_DailyLog_STHookLog" FromRole="STHookLog" ToRole="DailyLog" />
+  </EntityType>
+  <Association Name="FK_DailyLog_STHookLog">
+    <End Type="STHookModel.STHookLog" Role="STHookLog" Multiplicity="0..1" />
+    <End Type="STHookModel.DailyLog" Role="DailyLog" Multiplicity="*" />
+  </Association>
+  <EntityType Name="SMTPSettings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SMTPHost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SMTPPort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SMTPEnableSSL" Type="Boolean" />
+    <Property Name="SMTPUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SMTPPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SMTPNotificationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HookCredentials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceTradeURI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceTradeUserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceTradePassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AS400ConnectionString" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceTradeURITest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceTradeUserNameTest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceTradePasswordTest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AS400ConnectionStringTest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="runProductionMode" Type="Boolean" />
+  </EntityType>
+</Schema>

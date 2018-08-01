@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="STHookModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DailyLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogID" Type="int" />
+          <Property Name="ServiceTradeId" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="logType" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="HookCredentials">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceTradeURI" Type="nvarchar" MaxLength="255" />
+          <Property Name="ServiceTradeUserName" Type="nvarchar" MaxLength="255" />
+          <Property Name="ServiceTradePassword" Type="nvarchar" MaxLength="255" />
+          <Property Name="AS400ConnectionString" Type="nvarchar" MaxLength="255" />
+          <Property Name="ServiceTradeURITest" Type="nvarchar" MaxLength="255" />
+          <Property Name="ServiceTradeUserNameTest" Type="nvarchar" MaxLength="255" />
+          <Property Name="ServiceTradePasswordTest" Type="nvarchar" MaxLength="255" />
+          <Property Name="AS400ConnectionStringTest" Type="nvarchar" MaxLength="255" />
+          <Property Name="runProductionMode" Type="bit" />
+        </EntityType>
+        <EntityType Name="SMTPSettings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SMTPHost" Type="nvarchar" MaxLength="50" />
+          <Property Name="SMTPPort" Type="nvarchar" MaxLength="50" />
+          <Property Name="SMTPEnableSSL" Type="bit" />
+          <Property Name="SMTPUsername" Type="nvarchar" MaxLength="50" />
+          <Property Name="SMTPPassword" Type="nvarchar" MaxLength="50" />
+          <Property Name="SMTPNotificationEmail" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="STHookLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TimeStamp" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_DailyLog_STHookLog">
+          <End Role="STHookLog" Type="Self.STHookLog" Multiplicity="0..1" />
+          <End Role="DailyLog" Type="Self.DailyLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STHookLog">
+              <PropertyRef Name="LogID" />
+            </Principal>
+            <Dependent Role="DailyLog">
+              <PropertyRef Name="LogID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="STHookModelStoreContainer">
+          <EntitySet Name="DailyLog" EntityType="Self.DailyLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HookCredentials" EntityType="Self.HookCredentials" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SMTPSettings" EntityType="Self.SMTPSettings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="STHookLog" EntityType="Self.STHookLog" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DailyLog_STHookLog" Association="Self.FK_DailyLog_STHookLog">
+            <End Role="STHookLog" EntitySet="STHookLog" />
+            <End Role="DailyLog" EntitySet="DailyLog" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="STHookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="STHookEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="DailyLog" EntityType="STHookModel.DailyLog" />
+          <EntitySet Name="STHookLog" EntityType="STHookModel.STHookLog" />
+          <AssociationSet Name="FK_DailyLog_STHookLog" Association="STHookModel.FK_DailyLog_STHookLog">
+            <End Role="STHookLog" EntitySet="STHookLog" />
+            <End Role="DailyLog" EntitySet="DailyLog" />
+          </AssociationSet>
+          <EntitySet Name="SMTPSettings" EntityType="STHookModel.SMTPSettings" />
+          <EntitySet Name="HookCredentials" EntityType="STHookModel.HookCredentials" />
+        </EntityContainer>
+        <EntityType Name="DailyLog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTradeId" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="logType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="STHookLog" Relationship="STHookModel.FK_DailyLog_STHookLog" FromRole="DailyLog" ToRole="STHookLog" />
+        </EntityType>
+        <EntityType Name="STHookLog">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeStamp" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="DailyLog" Relationship="STHookModel.FK_DailyLog_STHookLog" FromRole="STHookLog" ToRole="DailyLog" />
+        </EntityType>
+        <Association Name="FK_DailyLog_STHookLog">
+          <End Type="STHookModel.STHookLog" Role="STHookLog" Multiplicity="0..1" />
+          <End Type="STHookModel.DailyLog" Role="DailyLog" Multiplicity="*" />
+        </Association>
+        <EntityType Name="SMTPSettings">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SMTPHost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SMTPPort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SMTPEnableSSL" Type="Boolean" />
+          <Property Name="SMTPUsername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SMTPPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SMTPNotificationEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HookCredentials">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceTradeURI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceTradeUserName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceTradePassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AS400ConnectionString" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceTradeURITest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceTradeUserNameTest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceTradePasswordTest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AS400ConnectionStringTest" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="runProductionMode" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="STHookModelStoreContainer" CdmEntityContainer="STHookEntities" >
+          <EntitySetMapping Name="DailyLog">
+            <EntityTypeMapping TypeName="STHookModel.DailyLog">
+              <MappingFragment StoreEntitySet="DailyLog">
+                <ScalarProperty Name="logType" ColumnName="logType" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ServiceTradeId" ColumnName="ServiceTradeId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STHookLog">
+            <EntityTypeMapping TypeName="STHookModel.STHookLog">
+              <MappingFragment StoreEntitySet="STHookLog">
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_DailyLog_STHookLog" TypeName="STHookModel.FK_DailyLog_STHookLog" StoreEntitySet="DailyLog">
+            <EndProperty Name="DailyLog">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+            <EndProperty Name="STHookLog">
+              <ScalarProperty Name="LogID" ColumnName="LogID" />
+            </EndProperty>
+            <Condition ColumnName="LogID" IsNull="false" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="SMTPSettings">
+            <EntityTypeMapping TypeName="STHookModel.SMTPSettings">
+              <MappingFragment StoreEntitySet="SMTPSettings">
+                <ScalarProperty Name="SMTPNotificationEmail" ColumnName="SMTPNotificationEmail" />
+                <ScalarProperty Name="SMTPPassword" ColumnName="SMTPPassword" />
+                <ScalarProperty Name="SMTPUsername" ColumnName="SMTPUsername" />
+                <ScalarProperty Name="SMTPEnableSSL" ColumnName="SMTPEnableSSL" />
+                <ScalarProperty Name="SMTPPort" ColumnName="SMTPPort" />
+                <ScalarProperty Name="SMTPHost" ColumnName="SMTPHost" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HookCredentials">
+            <EntityTypeMapping TypeName="STHookModel.HookCredentials">
+              <MappingFragment StoreEntitySet="HookCredentials">
+                <ScalarProperty Name="runProductionMode" ColumnName="runProductionMode" />
+                <ScalarProperty Name="AS400ConnectionStringTest" ColumnName="AS400ConnectionStringTest" />
+                <ScalarProperty Name="ServiceTradePasswordTest" ColumnName="ServiceTradePasswordTest" />
+                <ScalarProperty Name="ServiceTradeUserNameTest" ColumnName="ServiceTradeUserNameTest" />
+                <ScalarProperty Name="ServiceTradeURITest" ColumnName="ServiceTradeURITest" />
+                <ScalarProperty Name="AS400ConnectionString" ColumnName="AS400ConnectionString" />
+                <ScalarProperty Name="ServiceTradePassword" ColumnName="ServiceTradePassword" />
+                <ScalarProperty Name="ServiceTradeUserName" ColumnName="ServiceTradeUserName" />
+                <ScalarProperty Name="ServiceTradeURI" ColumnName="ServiceTradeURI" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

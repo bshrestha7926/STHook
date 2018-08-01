@@ -1,0 +1,16 @@
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\HillerService.DataMigration.config
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\HillerService.DataMigration.dll.config
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\HillerService.DataMigration.dll
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\HillerService.DataMigration.pdb
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\DataMigrationService.Utilities.dll
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\EntityFramework.dll
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\EntityFramework.SqlServer.dll
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\Newtonsoft.Json.dll
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\DataMigrationService.Utilities.pdb
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\EntityFramework.xml
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\EntityFramework.SqlServer.xml
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\Newtonsoft.Json.pdb
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\Newtonsoft.Json.xml
+D:\DataMigrationService\HillerService.DataMigration\obj\Debug\HillerService.DataMigration.csprojResolveAssemblyReference.cache
+D:\DataMigrationService\HillerService.DataMigration\obj\Debug\HillerService.DataMigration.dll
+D:\DataMigrationService\HillerService.DataMigration\obj\Debug\HillerService.DataMigration.pdb

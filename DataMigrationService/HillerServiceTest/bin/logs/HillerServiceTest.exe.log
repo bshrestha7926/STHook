@@ -1,0 +1,74 @@
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:46:16.3543876-05:00" level="INFO" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>IPAddress: 192.168.10.100</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:46:16.3773266-05:00" level="INFO" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Start Time:7/16/2018 7:46:16 PM </log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:46:17.0909901-05:00" level="DEBUG" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Json Data: {"username":"jdeintegration", "password": "icshiller"}</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:46:17.5178624-05:00" level="DEBUG" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>HttpWebResponse Pragma: no-cache
+X-Frame-Options: SAMEORIGIN
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Length: 860
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Type: application/json
+Date: Mon, 16 Jul 2018 19:46:17 GMT
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Set-Cookie: PHPSESSID=977fm004crtg6mqk0lh69j3po2; path=/
+Server: Apache/2.4.33 (Amazon) OpenSSL/1.0.2k-fips
+
+</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:46:17.5395408-05:00" level="DEBUG" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>HTTPStatusCode: OK</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:46:17.9378932-05:00" level="DEBUG" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Starting Migration</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:46:18.3732768-05:00" level="DEBUG" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Connection Data Source=192.168.50.5;Default Collection=CRPDTA;User ID=hiller;</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:46:18.3862432-05:00" level="DEBUG" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Get invoices from Service Trade.</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:46:18.3992360-05:00" level="DEBUG" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Json Data: </log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:46:19.0448117-05:00" level="DEBUG" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>HttpWebResponse Pragma: no-cache
+X-Frame-Options: SAMEORIGIN
+Content-Length: 2842
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Type: application/json
+Date: Mon, 16 Jul 2018 19:46:18 GMT
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Server: Apache/2.4.33 (Amazon) OpenSSL/1.0.2k-fips
+
+</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:46:19.0796857-05:00" level="DEBUG" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>HTTPStatusCode: OK</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:46:32.2050920-05:00" level="ERROR" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message /><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties><log4net:exception>System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
+   at HillerService.DataMigration.ServiceTradeIntegration.ServiceTradeAPIManager.GetCompanyExternalId(Int32 companyid)
+   at HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator.GetInvoicesFromServiceTrade(iDB2Command db2Command) in d:\DataMigrationService\HillerService.DataMigration\ServiceTradeIntegration\HillerServiceDataMigrator.cs:line 289
+   at HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator.PerformMigration() in d:\DataMigrationService\HillerService.DataMigration\ServiceTradeIntegration\HillerServiceDataMigrator.cs:line 89</log4net:exception></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:46:41.1635742-05:00" level="INFO" thread="10128" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>End Time: 7/16/2018 7:46:41 PM</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:48:46.4046022-05:00" level="INFO" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>IPAddress: 192.168.10.100</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:48:46.4442663-05:00" level="INFO" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Start Time:7/16/2018 7:48:46 PM </log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:48:47.0202181-05:00" level="DEBUG" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Json Data: {"username":"jdeintegration", "password": "icshiller"}</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:48:47.4638302-05:00" level="DEBUG" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>HttpWebResponse Pragma: no-cache
+X-Frame-Options: SAMEORIGIN
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Length: 860
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Type: application/json
+Date: Mon, 16 Jul 2018 19:48:47 GMT
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Set-Cookie: PHPSESSID=okb9dl59ba3c0tmfam7gs3gog4; path=/
+Server: Apache/2.4.33 (Amazon) OpenSSL/1.0.2k-fips
+
+</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:48:47.5107188-05:00" level="DEBUG" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>HTTPStatusCode: OK</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:48:47.8236442-05:00" level="DEBUG" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Starting Migration</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:48:48.2065267-05:00" level="DEBUG" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Connection Data Source=192.168.50.5;Default Collection=CRPDTA;User ID=hiller;</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:48:48.2514487-05:00" level="DEBUG" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Get invoices from Service Trade.</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:48:48.3092532-05:00" level="DEBUG" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>Json Data: </log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:48:48.9407527-05:00" level="DEBUG" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>HttpWebResponse Pragma: no-cache
+X-Frame-Options: SAMEORIGIN
+Content-Length: 2842
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Content-Type: application/json
+Date: Mon, 16 Jul 2018 19:48:48 GMT
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Server: Apache/2.4.33 (Amazon) OpenSSL/1.0.2k-fips
+
+</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.RestClient" timestamp="2018-07-16T14:48:48.9975741-05:00" level="DEBUG" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>HTTPStatusCode: OK</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:49:27.6398552-05:00" level="ERROR" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message /><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties><log4net:exception>System.AccessViolationException: Attempted to read or write protected memory. This is often an indication that other memory is corrupt.
+   at HillerService.DataMigration.ServiceTradeIntegration.ServiceTradeAPIManager.GetCompanyExternalId(Int32 companyid)
+   at HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator.GetInvoicesFromServiceTrade(iDB2Command db2Command) in d:\DataMigrationService\HillerService.DataMigration\ServiceTradeIntegration\HillerServiceDataMigrator.cs:line 289
+   at HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator.PerformMigration() in d:\DataMigrationService\HillerService.DataMigration\ServiceTradeIntegration\HillerServiceDataMigrator.cs:line 89</log4net:exception></log4net:event>
+<log4net:event logger="HillerService.DataMigration.ServiceTradeIntegration.HillerServiceDataMigrator" timestamp="2018-07-16T14:49:33.1104595-05:00" level="INFO" thread="10324" domain="HillerServiceTest.exe" username="HILLERCOMPANIES\bshrestha"><log4net:message>End Time: 7/16/2018 7:49:33 PM</log4net:message><log4net:properties><log4net:data name="log4net:HostName" value="SPX-BS01" /></log4net:properties></log4net:event>

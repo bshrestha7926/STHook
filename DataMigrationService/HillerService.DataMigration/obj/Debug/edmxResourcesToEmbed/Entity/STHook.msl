@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="STHookModelStoreContainer" CdmEntityContainer="STHookEntities">
+    <EntitySetMapping Name="DailyLog">
+      <EntityTypeMapping TypeName="STHookModel.DailyLog">
+        <MappingFragment StoreEntitySet="DailyLog">
+          <ScalarProperty Name="logType" ColumnName="logType" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ServiceTradeId" ColumnName="ServiceTradeId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STHookLog">
+      <EntityTypeMapping TypeName="STHookModel.STHookLog">
+        <MappingFragment StoreEntitySet="STHookLog">
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_DailyLog_STHookLog" TypeName="STHookModel.FK_DailyLog_STHookLog" StoreEntitySet="DailyLog">
+      <EndProperty Name="DailyLog">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+      <EndProperty Name="STHookLog">
+        <ScalarProperty Name="LogID" ColumnName="LogID" />
+      </EndProperty>
+      <Condition ColumnName="LogID" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="SMTPSettings">
+      <EntityTypeMapping TypeName="STHookModel.SMTPSettings">
+        <MappingFragment StoreEntitySet="SMTPSettings">
+          <ScalarProperty Name="SMTPNotificationEmail" ColumnName="SMTPNotificationEmail" />
+          <ScalarProperty Name="SMTPPassword" ColumnName="SMTPPassword" />
+          <ScalarProperty Name="SMTPUsername" ColumnName="SMTPUsername" />
+          <ScalarProperty Name="SMTPEnableSSL" ColumnName="SMTPEnableSSL" />
+          <ScalarProperty Name="SMTPPort" ColumnName="SMTPPort" />
+          <ScalarProperty Name="SMTPHost" ColumnName="SMTPHost" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HookCredentials">
+      <EntityTypeMapping TypeName="STHookModel.HookCredentials">
+        <MappingFragment StoreEntitySet="HookCredentials">
+          <ScalarProperty Name="runProductionMode" ColumnName="runProductionMode" />
+          <ScalarProperty Name="AS400ConnectionStringTest" ColumnName="AS400ConnectionStringTest" />
+          <ScalarProperty Name="ServiceTradePasswordTest" ColumnName="ServiceTradePasswordTest" />
+          <ScalarProperty Name="ServiceTradeUserNameTest" ColumnName="ServiceTradeUserNameTest" />
+          <ScalarProperty Name="ServiceTradeURITest" ColumnName="ServiceTradeURITest" />
+          <ScalarProperty Name="AS400ConnectionString" ColumnName="AS400ConnectionString" />
+          <ScalarProperty Name="ServiceTradePassword" ColumnName="ServiceTradePassword" />
+          <ScalarProperty Name="ServiceTradeUserName" ColumnName="ServiceTradeUserName" />
+          <ScalarProperty Name="ServiceTradeURI" ColumnName="ServiceTradeURI" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,2 @@
+D:\DataMigrationService\Installer\bin\Debug\Hiller Data Migration.msi
+D:\DataMigrationService\Installer\bin\Debug\Hiller Data Migration.wixpdb

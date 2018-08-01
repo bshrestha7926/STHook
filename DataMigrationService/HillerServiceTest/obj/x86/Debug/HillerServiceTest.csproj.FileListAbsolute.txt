@@ -1,0 +1,16 @@
+D:\DataMigrationService\HillerServiceTest\obj\x86\Debug\HillerServiceTest.csprojResolveAssemblyReference.cache
+D:\DataMigrationService\HillerServiceTest\bin\Debug\HillerService.DataMigration.config
+D:\DataMigrationService\HillerServiceTest\bin\Debug\rfsmart.log4net
+D:\DataMigrationService\HillerServiceTest\bin\Debug\DataMigrationService.Utilities.dll
+D:\DataMigrationService\HillerServiceTest\bin\Debug\HillerService.DataMigration.dll
+D:\DataMigrationService\HillerServiceTest\bin\Debug\log4net-FullFx.dll
+D:\DataMigrationService\HillerServiceTest\bin\Debug\Newtonsoft.Json.dll
+D:\DataMigrationService\HillerServiceTest\bin\Debug\DataMigrationService.Utilities.pdb
+D:\DataMigrationService\HillerServiceTest\bin\Debug\HillerService.DataMigration.pdb
+D:\DataMigrationService\HillerServiceTest\bin\Debug\Newtonsoft.Json.pdb
+D:\DataMigrationService\HillerServiceTest\bin\Debug\Newtonsoft.Json.xml
+D:\DataMigrationService\HillerServiceTest\bin\Debug\STHook.exe.config
+D:\DataMigrationService\HillerServiceTest\bin\Debug\STHook.exe
+D:\DataMigrationService\HillerServiceTest\bin\Debug\STHook.pdb
+D:\DataMigrationService\HillerServiceTest\obj\x86\Debug\STHook.exe
+D:\DataMigrationService\HillerServiceTest\obj\x86\Debug\STHook.pdb

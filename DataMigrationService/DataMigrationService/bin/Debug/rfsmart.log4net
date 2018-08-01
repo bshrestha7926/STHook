@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+  <appender name="DataMigration_RollingFileAppender" type="log4net.Appender.RollingFileAppender">
+    <file type="log4net.Util.PatternString" value="..\logs\%appdomain.log" />
+    <appendToFile value="true" />
+    <rollingStyle value="Size" />
+    <maxSizeRollBackups value="10" />
+    <maximumFileSize value="1000KB" />
+    <countDirection value="1"/>
+    <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
+    <staticLogFileName value="true" />
+    <layout type="log4net.Layout.XmlLayout">
+      <!-- <conversionPattern value="%date [%thread] %-5level %logger [%property{NDC}] - %message%newline" /> -->
+    </layout>
+    <!--
+    <filter type="log4net.Filter.PropertyFilter">
+      <stringToMatch value="SmartFlow"/>
+    </filter>
+    <filter type="log4net.Filter.LevelRangeFilter">
+      <levelMin value="DEBUG" />
+      <levelMax value="FATAL" />
+    </filter>
+    <filter type="log4net.Filter.DenyAllFilter"/>
+    -->
+  </appender>
+  <appender name="All_RollingFileAppender" type="log4net.Appender.RollingFileAppender">
+
+    <file value="..\log\AllLogData" />
+    <appendToFile value="true" />
+    <!--
+			<maxSizeRollBackups value="10" />
+			<countDirection value="1" />
+					 -->
+    <maximumFileSize value="1MB" />
+    <datePattern value=" - yyyyMM.'log'" />
+    <rollingStyle value="Date" />
+    <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
+    <staticLogFileName value="false" />
+    <layout type="log4net.Layout.PatternLayout">
+      <header value="[Header]&#13;&#10;" />
+      <footer value="[Footer]&#13;&#10;" />
+      <conversionPattern value="%-6timestamp %date %thread [%property{SessionId}] %-5level %logger - %message%newline %exception" />
+    </layout>
+    <threshold value="Info"/>
+  </appender>
+  <logger name="ICS.Database.DAL" additivity="false">
+    <level value="Info"/>
+    <appender-ref ref="DataMigration_RollingFileAppender"/>
+  </logger>
+  <logger name="ICS.Database.DbConnectBase" additivity="false">
+    <level value="ERROR"/>
+    <appender-ref ref="DataMigration_RollingFileAppender"/>
+  </logger>
+
+  <root>
+    <level value="ALL" />
+    <appender-ref ref="DataMigration_RollingFileAppender" />
+    <!-- <appender-ref ref="All_RollingFileAppender" /> -->
+  </root>
+</log4net>

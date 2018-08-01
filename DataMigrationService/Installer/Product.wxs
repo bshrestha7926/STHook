@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Hiller Data Migration" Language="1033" Version="1.2" Manufacturer="The Hiller Companies, Inc." UpgradeCode="80DD80C7-178D-4B67-8A61-155ABA511143">
+    <Package InstallerVersion="500" Compressed="yes" Id="*" Keywords="Installer" Description="Hiller Data Migration Installer" Languages="1033" Platform="x64" />
+    <Media Id="1" Cabinet="DataMigration.cab" EmbedCab="yes" />
+    <Icon Id="appicon.exe" SourceFile=".\Images\rfs.ico" />
+    <WixVariable Id="WixUIBannerBmp" Value=".\Images\Title.jpg" />
+    <WixVariable Id="WixUIDialogBmp" Value=".\Images\RFS_Background.jpg" />
+    <UIRef Id="RFSUI_Minimal" />
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="INSTALLLOCATION" Name="Hiller">
+          <Directory Id="DATAMIGRATION" Name="Data Migration">
+            <Directory Id="BINDIR" Name="bin">
+              <Component Id="COMPONENT_SERVICE_CONFIG" Guid="8E45E076-12F1-417A-ACF7-920E42F59479" NeverOverwrite="yes" Win64="yes">
+                <Registry Root="HKLM" Key="SOFTWARE\ICS\DATAMIGRATION\Keys\Installation" Name="ServiceConfiguration" KeyPath="yes" Type="string" />
+                <File Id="DataMigrationService.exe.config" Name="DataMigrationService.exe.config" DiskId="1" Source="$(var.DataMigrationService.TargetPath).config" />
+              </Component>
+              <Component Id="COMPONENT_SERVICE" Guid="E84E7905-8085-4543-8EE8-F55AFE6FEFCD" SharedDllRefCount="no" KeyPath="no" NeverOverwrite="no" Permanent="no" Transitive="no" Win64="yes" Location="either">
+                <Registry Root="HKLM" Key="SOFTWARE\ICS\DATAMIGRATION\Keys\Installation" Name="ServiceExecutable" KeyPath="yes" Type="string" />
+                <File DiskId="1" Id="DataMigrationService.Utilities.dll" Name="DataMigrationService.Utilities.dll" Source="$(var.DataMigrationService.Utilities.TargetPath)"/>
+              </Component>
+              <Component Id="COMPONENT_LOG4NET" Guid="F67B9BA8-DDE8-4E7B-BA8A-1BD87CFF8D52" NeverOverwrite="no" Win64="yes">
+                <Registry Root="HKLM" Key="SOFTWARE\ICS\DATAMIGRATION\Keys\Installation" Name="Log4NetAssembly" KeyPath="yes" Type="string" />
+                <File DiskId="1" Id="log4net_FullFx.dll" Name="log4net-FullFx.dll" Source="$(var.DataMigrationService.TargetDir)log4net-FullFx.dll" />
+              </Component>
+              <Component Id="COMPONENT_LOG4NET_CONFIG" Guid="1DDE852A-DF87-4F71-9E9E-BCE4506AE476" NeverOverwrite="yes" Win64="yes">
+                <Registry Root="HKLM" Key="SOFTWARE\ICS\DATAMIGRATION\Keys\Installation" Name="Log4NetConfiguration" KeyPath="yes" Type="string" />
+                <File DiskId="1" Id="rfsmart.log4net" Name="rfsmart.log4net" Source="$(var.DataMigrationService.TargetDir)rfsmart.log4net" />
+              </Component>
+              <Component Id="COMPONENT_HILLERSERVICE" Guid="4600014D-30F5-4C5E-83D1-4F71A0F0E47F" NeverOverwrite="no" Win64="yes">
+                <Registry Root="HKLM" Key="SOFTWARE\ICS\DATAMIGRATION\Keys\Installation" Name="HillerServiceAssembly" KeyPath="yes" Type="string" />
+                <File DiskId="1" Id="HillerService.DataMigration.dll" Name="HillerService.DataMigration.dll" Source="$(var.HillerService.DataMigration.TargetPath)" />
+                <File DiskId="1" Id="IBM.Data.DB2.iSeries.dll" Name="IBM.Data.DB2.iSeries.dll" Source="$(var.SolutionDir)packages\ClientAccess\IBM.Data.DB2.iSeries.dll" />
+                <File DiskId="1" Id="Newtonsoft.Json.dll" Name="Newtonsoft.Json.dll" Source="$(var.SolutionDir)packages\Net35\Newtonsoft.Json.dll" />
+              </Component>
+              <Component Id="COMPONENT_HILLERSERVICE_CONFIG" Guid="08D8EEA8-3B24-46E1-ABDD-73ECA53AEDAD" NeverOverwrite="yes" Win64="yes">
+                <Registry Root="HKLM" Key="SOFTWARE\ICS\DATAMIGRATION\Keys\Installation" Name="HillerServiceConfiguration" KeyPath="yes" Type="string" />
+                <File DiskId="1" Id="HillerService.DataMigration.config" Name="HillerService.DataMigration.config" Source="$(var.HillerService.DataMigration.TargetDir)HillerService.DataMigration.config" />
+              </Component>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+    <Component Id="COMPONENT_SERVICE_INSTALL" Guid="8E91881A-792A-4982-99B7-68C656FA3A86" SharedDllRefCount="no" NeverOverwrite="no" Permanent="no" Transitive="no" Win64="yes" Location="either" Directory="BINDIR">
+      <File DiskId="1" Id="DataMigrationServiceInstall" Name="DataMigrationService.exe" Source="$(var.DataMigrationService.TargetPath)" KeyPath="yes"/>
+      <ServiceInstall Name="Hiller_DataMigration" Type="ownProcess" Start="demand" ErrorControl="critical" Id="DataMigrationServiceInstall" Description="Hiller service for the migration of data" DisplayName="Hiller Data Migration" Account="LocalSystem" Vital="yes" />
+      <ServiceControl Id="DataMigrationServiceInstall" Name="Hiller_DataMigration" Remove="uninstall" Stop="both" Wait="yes" />
+    </Component>
+    <Feature Id="ProductFeature" Title="Installer" Level="1">
+      <ComponentRef Id="COMPONENT_SERVICE_CONFIG" />
+      <ComponentRef Id="COMPONENT_SERVICE" />
+      <ComponentRef Id="COMPONENT_LOG4NET" />
+      <ComponentRef Id="COMPONENT_LOG4NET_CONFIG" />
+      <ComponentRef Id="COMPONENT_HILLERSERVICE" />
+      <ComponentRef Id="COMPONENT_HILLERSERVICE_CONFIG" />
+      <ComponentRef Id="COMPONENT_SERVICE_INSTALL" />
+    </Feature>
+    <UI />
+   
+    <Property Id="SAMEVERSIONFOUND" Secure="yes" />
+    <Property Id="LATERVERSIONFOUND" Secure="yes" />
+    <Property Id="OLDERVERSIONFOUND" Secure="yes" />
+    <Property Id="ARPPRODUCTICON" Value="appicon.exe" />
+    <InstallExecuteSequence>
+      <Custom Action="Action_AlreadyUpdated" After="FindRelatedProducts">SAMEVERSIONFOUND</Custom>
+      <Custom Action="Action_LaterVersionInstalled" After="FindRelatedProducts">LATERVERSIONFOUND</Custom>
+      <FindRelatedProducts Before="LaunchConditions" />
+      <RemoveExistingProducts After="InstallFinalize" />
+    </InstallExecuteSequence>
+    <InstallUISequence>
+      <Custom Action="Action_AlreadyUpdated" After="FindRelatedProducts">SAMEVERSIONFOUND</Custom>
+      <Custom Action="Action_LaterVersionInstalled" After="FindRelatedProducts">LATERVERSIONFOUND</Custom>
+      <FindRelatedProducts Before="LaunchConditions" />
+    </InstallUISequence>
+    <CustomAction Id="Action_AlreadyUpdated" Error="[ProductName] has already been updated to [ProductVersion]." />
+    <CustomAction Error="A later version of [ProductName] is already installed." Id="Action_LaterVersionInstalled" />
+  </Product>
+</Wix>

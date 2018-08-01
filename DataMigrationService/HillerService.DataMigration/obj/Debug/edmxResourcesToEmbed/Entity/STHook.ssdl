@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="STHookModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DailyLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogID" Type="int" />
+    <Property Name="ServiceTradeId" Type="nvarchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+    <Property Name="logType" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="HookCredentials">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceTradeURI" Type="nvarchar" MaxLength="255" />
+    <Property Name="ServiceTradeUserName" Type="nvarchar" MaxLength="255" />
+    <Property Name="ServiceTradePassword" Type="nvarchar" MaxLength="255" />
+    <Property Name="AS400ConnectionString" Type="nvarchar" MaxLength="255" />
+    <Property Name="ServiceTradeURITest" Type="nvarchar" MaxLength="255" />
+    <Property Name="ServiceTradeUserNameTest" Type="nvarchar" MaxLength="255" />
+    <Property Name="ServiceTradePasswordTest" Type="nvarchar" MaxLength="255" />
+    <Property Name="AS400ConnectionStringTest" Type="nvarchar" MaxLength="255" />
+    <Property Name="runProductionMode" Type="bit" />
+  </EntityType>
+  <EntityType Name="SMTPSettings">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SMTPHost" Type="nvarchar" MaxLength="50" />
+    <Property Name="SMTPPort" Type="nvarchar" MaxLength="50" />
+    <Property Name="SMTPEnableSSL" Type="bit" />
+    <Property Name="SMTPUsername" Type="nvarchar" MaxLength="50" />
+    <Property Name="SMTPPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="SMTPNotificationEmail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="STHookLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TimeStamp" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_DailyLog_STHookLog">
+    <End Role="STHookLog" Type="Self.STHookLog" Multiplicity="0..1" />
+    <End Role="DailyLog" Type="Self.DailyLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="STHookLog">
+        <PropertyRef Name="LogID" />
+      </Principal>
+      <Dependent Role="DailyLog">
+        <PropertyRef Name="LogID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="STHookModelStoreContainer">
+    <EntitySet Name="DailyLog" EntityType="Self.DailyLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HookCredentials" EntityType="Self.HookCredentials" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SMTPSettings" EntityType="Self.SMTPSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STHookLog" EntityType="Self.STHookLog" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DailyLog_STHookLog" Association="Self.FK_DailyLog_STHookLog">
+      <End Role="STHookLog" EntitySet="STHookLog" />
+      <End Role="DailyLog" EntitySet="DailyLog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

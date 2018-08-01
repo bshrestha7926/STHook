@@ -1,0 +1,7 @@
+obj\Debug\Product.wixobj
+obj\Debug\RFSUI_Minimal.wixobj
+obj\Debug\Installer.wixproj.BindContentsFileListnull.txt
+obj\Debug\Installer.wixproj.BindOutputsFileListnull.txt
+obj\Debug\Installer.wixproj.BindBuiltOutputsFileListnull.txt
+D:\DataMigrationService\Installer\bin\Debug\Hiller Data Migration.msi
+D:\DataMigrationService\Installer\bin\Debug\Hiller Data Migration.wixpdb

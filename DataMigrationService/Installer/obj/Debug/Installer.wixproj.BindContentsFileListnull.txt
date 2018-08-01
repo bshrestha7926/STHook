@@ -1,0 +1,9 @@
+D:\DataMigrationService\DataMigrationService\bin\Debug\DataMigrationService.exe.config
+D:\DataMigrationService\DataMigrationService.Utilities\bin\Debug\DataMigrationService.Utilities.dll
+D:\DataMigrationService\DataMigrationService\bin\Debug\DataMigrationService.exe
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\HillerService.DataMigration.config
+D:\DataMigrationService\HillerService.DataMigration\bin\Debug\HillerService.DataMigration.dll
+D:\DataMigrationService\packages\ClientAccess\IBM.Data.DB2.iSeries.dll
+D:\DataMigrationService\DataMigrationService\bin\Debug\log4net-FullFx.dll
+D:\DataMigrationService\packages\Net35\Newtonsoft.Json.dll
+D:\DataMigrationService\DataMigrationService\bin\Debug\rfsmart.log4net
