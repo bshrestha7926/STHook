@@ -14,6 +14,8 @@ D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\Entity
 D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\EntityFramework.SqlServer.dll
 D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\EntityFramework.xml
 D:\Projects\DataMigrationService\DataMigrationService.Utilities\bin\Debug\EntityFramework.SqlServer.xml
-D:\Projects\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.csprojResolveAssemblyReference.cache
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.csprojAssemblyReference.cache
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.csproj.CoreCompileInputs.cache
+D:\Projects\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.csproj.CopyComplete
 D:\Projects\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.dll
 D:\Projects\DataMigrationService\DataMigrationService.Utilities\obj\Debug\DataMigrationService.Utilities.pdb
