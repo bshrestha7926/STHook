@@ -21,16 +21,12 @@ D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\HillerSer
 D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\DataMigrationService.Utilities.dll
 D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\EntityFramework.dll
 D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\EntityFramework.SqlServer.dll
-D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\IBM.Data.DB2.iSeries.dll
 D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\Newtonsoft.Json.dll
 D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\DataMigrationService.Utilities.pdb
-D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\DataMigrationService.Utilities.dll.config
 D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\EntityFramework.xml
 D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\EntityFramework.SqlServer.xml
 D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\Newtonsoft.Json.pdb
 D:\Projects\DataMigrationService\HillerService.DataMigration\bin\Debug\Newtonsoft.Json.xml
-D:\Projects\DataMigrationService\HillerService.DataMigration\obj\Debug\HillerService.DataMigration.csprojAssemblyReference.cache
-D:\Projects\DataMigrationService\HillerService.DataMigration\obj\Debug\HillerService.DataMigration.csproj.CoreCompileInputs.cache
-D:\Projects\DataMigrationService\HillerService.DataMigration\obj\Debug\HillerService.DataMigration.csproj.CopyComplete
 D:\Projects\DataMigrationService\HillerService.DataMigration\obj\Debug\HillerService.DataMigration.dll
 D:\Projects\DataMigrationService\HillerService.DataMigration\obj\Debug\HillerService.DataMigration.pdb
+D:\Projects\DataMigrationService\HillerService.DataMigration\obj\Debug\HillerService.DataMigration.csprojResolveAssemblyReference.cache
